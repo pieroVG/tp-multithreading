@@ -164,12 +164,9 @@ wheels = [
 name = "tp-multithreading"
 version = "0.1.0"
 source = { virtual = "." }
-<<<<<<< HEAD
-=======
 dependencies = [
     { name = "numpy" },
 ]
->>>>>>> 8a7ed81 (tp1 fini)
 
 [package.dev-dependencies]
 dev = [
@@ -177,10 +174,7 @@ dev = [
 ]
 
 [package.metadata]
-<<<<<<< HEAD
-=======
 requires-dist = [{ name = "numpy", specifier = ">=2.3.5" }]
->>>>>>> 8a7ed81 (tp1 fini)
 
 [package.metadata.requires-dev]
 dev = [{ name = "pre-commit", specifier = ">=4.5.1" }]
