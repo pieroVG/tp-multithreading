@@ -1,22 +1,23 @@
-from queue_manager import QueueManager
+from manager import QueueManager
 from task import Task
 
 
 def main():
-    manager = QueueManager(address=("", 50000), authkey=b"abc")
+    manager = QueueManager(
+        address=("", 50000),
+        authkey=b"secret",
+    )
     manager.start()
 
-    task_q = manager.get_task_queue()
-    result_q = manager.get_result_queue()
+    task_queue = manager.get_task_queue()
+    result_queue = manager.get_result_queue()
 
-    # Création de 5 tâches
     for i in range(5):
-        task_q.put(Task(identifier=i, size=100))
+        task_queue.put(Task(identifier=i))
 
-    # Récupération des résultats
     for _ in range(5):
-        result = result_q.get()
-        print(f"Result: Task {result.identifier} done in {result.time:.4f}s")
+        t = result_queue.get()
+        print(f"Task {t.identifier} finished in {t.time:.4f}s")
 
     manager.shutdown()
 
