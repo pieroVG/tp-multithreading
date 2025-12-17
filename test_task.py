@@ -1,0 +1,17 @@
+import unittest
+import numpy as np
+from task import Task
+
+
+class TestTask:
+    def test_solve_linear_system(self):
+        task = Task()
+        task.work()
+
+        # Vérifie que A @ x ≈ b
+        Ax = task.a @ task.x
+        np.testing.assert_allclose(Ax, task.b)
+
+
+if __name__ == "__main__":
+    unittest.main()
