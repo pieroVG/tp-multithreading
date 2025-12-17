@@ -3,7 +3,7 @@ import numpy as np
 from task import Task
 
 
-class TestTask:
+class TestTask(unittest.TestCase):
     def test_solve_linear_system(self):
         task = Task()
         task.work()
